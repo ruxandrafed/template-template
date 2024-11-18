@@ -10,6 +10,12 @@ on: pull_request_target
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
 
+permissions:
+  contents: write
+  statuses: write
+  pull-requests: write
+
+
 jobs:
   auto-merge:
     # only run for dependabot PRs
